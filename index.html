@@ -1,5 +1,11 @@
 <html>
-	<head><title>Chat </title></head>
+	<head><title>Chat </title>
+	<script runat=server>
+Platform.Load("core","1");
+HTTPHeader.SetValue("Access-Control-Allow-Methods","POST");
+HTTPHeader.SetValue("Access-Control-Allow-Origin","*");
+</script>
+	</head>
 <body>
 <style type='text/css'>
 	.embeddedServiceHelpButton .helpButton .uiButton {
