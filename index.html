@@ -89,12 +89,10 @@ HTTPHeader.SetValue("Access-Control-Allow-Origin","*");
         // Settings for Chat
         embedded_svc.settings.directToButtonRouting = function(prechatFormData){
             console.log('segmentvalue----'+segment);
-             if(segment == 'NseRenewals'){
-                 return "5737h00000002MJ"
-             }else if(segment == 'Trails'){
+             
                  console.log('inTrails');
                  return "5730n0000004DEE"
-             }
+             
         }
         
         //embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
@@ -111,14 +109,11 @@ HTTPHeader.SetValue("Access-Control-Allow-Origin","*");
         var chatButtonId = '';
         var chatDeploymentId = '';
         
-         if(segment == 'NseRenewals'){
-             chatButtonId = '5737h00000002MJ';
-             chatDeploymentId = '5727h00000001zj';
-         }else if(segment == 'Trails'){
+       
              console.log('just before init');
              chatButtonId = '5730n0000004DEE';
              chatDeploymentId = '5720n0000004D3q';
-         }
+         
 
 		embedded_svc.init(
 			'https://thomsonreutersglis2e--cxddev.my.salesforce.com',
