@@ -1,12 +1,3 @@
-<html>
-	<head><title>Chat </title>
-	<script runat=server>
-Platform.Load("core","1");
-HTTPHeader.SetValue("Access-Control-Allow-Methods","POST");
-HTTPHeader.SetValue("Access-Control-Allow-Origin","*");
-</script>
-	</head>
-<body>
 <style type='text/css'>
 	.embeddedServiceHelpButton .helpButton .uiButton {
 		background-color: #4D4D4D;
@@ -25,108 +16,39 @@ HTTPHeader.SetValue("Access-Control-Allow-Origin","*");
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
 	var initESW = function(gslbBaseURL) {
-		var url= new URL(location);
-       
-        var segment =url.searchParams.get("segment");
-        console.log('segment----'+segment);
-        
-        embedded_svc.settings.displayHelpButton = true; //Or false
-        embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+		embedded_svc.settings.displayHelpButton = true; //Or false
+		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
 
-        //embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
-        //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
+		//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
+		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
 
-        //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
-        //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
-        
-        
-        embedded_svc.settings.extraPrechatFormDetails = [
-                {  
-                    "label":"Segment",
-                    "value": segment,
-                    "transcriptFields":[ "Segment__c" ],
-                    "displayToAgent":true
-                },{
-                    "label":"First Name",
-                    "value": 'test',
-                    "transcriptFields":[ "Ecom_First_Name__c" ],
-                    "displayToAgent":true
-                
-                },{
-                    "label":"Last Name",
-                    "value": 'Sharma',
-                    "transcriptFields":[ "Ecom_Last_Name__c" ],
-                    "displayToAgent":true
-                
-                },{
-                    "label":"Email",
-                    "value": 'himanshu.sharma@thomsonreuters.com',
-                    "transcriptFields":[ "Ecom_Email__c" ],
-                    "displayToAgent":true
-                
-                },{
-                    "label":"State",
-                    "value": 'AL',
-                    "transcriptFields":[ "Ecom_State__c" ],
-                    "displayToAgent":true
-                
-                },{
-                    "label":"Opportunity",
-                    "value": '0064O00000liTpFQAU',
-                    "transcriptFields":[ "OpportunityId__c" ],
-                    "displayToAgent":true
-                
-                },{
-                    "label":"Account SSD",
-                    "value": 'a9d1B000000pL6NQAU',
-                    "transcriptFields":[ "AccountId__c" ],
-                    "displayToAgent":true
-                
-                }
+		//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
 
-        ];
-        
-        // Settings for Chat
-        embedded_svc.settings.directToButtonRouting = function(prechatFormData){
-            console.log('segmentvalue----'+segment);
-             
-                 console.log('inTrails');
-                 return "5730n0000004DEE"
-             
-        }
-        
-        //embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
-            // Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
-            // Returns a valid button ID.
-        //};
-        //embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
-        //embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
-        //embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+		// Settings for Chat
+		//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+			// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+			// Returns a valid button ID.
+		//};
+		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
+		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
+		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
 
-
-        embedded_svc.settings.enabledFeatures = ['LiveAgent'];
-        embedded_svc.settings.entryFeature = 'LiveAgent';
-        var chatButtonId = '';
-        var chatDeploymentId = '';
-        
-       
-             console.log('just before init');
-             chatButtonId = '5730n0000004DEE';
-             chatDeploymentId = '5720n0000004D3q';
-         
+		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+		embedded_svc.settings.entryFeature = 'LiveAgent';
 
 		embedded_svc.init(
-			'https://thomsonreutersglis2e--cxddev.my.salesforce.com',
-			'https://cxddev-thomsonreuterss2elatam.cs67.force.com',
+			'https://thomsonreutersglis2e--lrpqa.my.salesforce.com',
+			'https://lrpqa-thomsonreuterss2elatam.cs37.force.com',
 			gslbBaseURL,
-			'00D0n0000009OWW',
+			'00D2i0000000nGc',
 			'DCP_Snapin_NSE',
 			{
-				baseLiveAgentContentURL: 'https://c.la3-c1cs-ia5.salesforceliveagent.com/content',
-				deploymentId: chatDeploymentId,
-				buttonId: chatButtonId,
-				baseLiveAgentURL: 'https://d.la3-c1cs-ia5.salesforceliveagent.com/chat',
-				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I7h00000000GsEAI_17b82701061',
+				baseLiveAgentContentURL: 'https://c.la3-c1cs-ph2.salesforceliveagent.com/content',
+				deploymentId: '5722i0000008PGs',
+				buttonId: '5732i0000008Xoa',
+				baseLiveAgentURL: 'https://d.la3-c1cs-ph2.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I2i0000004CcoEAE_17b870967a9',
 				isOfflineSupportEnabled: false
 			}
 		);
@@ -134,7 +56,7 @@ HTTPHeader.SetValue("Access-Control-Allow-Origin","*");
 
 	if (!window.embedded_svc) {
 		var s = document.createElement('script');
-		s.setAttribute('src', 'https://thomsonreutersglis2e--cxddev.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.setAttribute('src', 'https://thomsonreutersglis2e--lrpqa.my.salesforce.com/embeddedservice/5.0/esw.min.js');
 		s.onload = function() {
 			initESW(null);
 		};
@@ -143,5 +65,3 @@ HTTPHeader.SetValue("Access-Control-Allow-Origin","*");
 		initESW('https://service.force.com');
 	}
 </script>
-	</body>
-</html>
