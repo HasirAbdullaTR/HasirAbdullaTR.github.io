@@ -87,7 +87,7 @@
                  return "5737h00000002MJ"
              }else if(segment == 'Trails'){
                  console.log('inTrails');
-                 return "5737h00000002ME"
+                 return "5730n0000004DEE"
              }
         }
         
@@ -110,15 +110,15 @@
              chatDeploymentId = '5727h00000001zj';
          }else if(segment == 'Trails'){
              console.log('just before init');
-             chatButtonId = '5737h00000002ME';
-             chatDeploymentId = '5727h00000001zj';
+             chatButtonId = '5730n0000004DEE';
+             chatDeploymentId = '5720n0000004D3q';
          }
 
 		embedded_svc.init(
-			'https://thomsonreutersglis2e--uat.my.salesforce.com',
-			'https://uat-thomsonreuterss2elatam.cs201.force.com',
+			'https://thomsonreutersglis2e--cxddev.my.salesforce.com',
+			'https://cxddev-thomsonreuterss2elatam.cs67.force.com',
 			gslbBaseURL,
-			'00D7h0000004fcP',
+			'00D0n0000009OWW',
 			'DCP_Snapin_NSE',
 			{
 				baseLiveAgentContentURL: 'https://c.la3-c1cs-ia5.salesforceliveagent.com/content',
@@ -133,7 +133,7 @@
 
 	if (!window.embedded_svc) {
 		var s = document.createElement('script');
-		s.setAttribute('src', 'https://thomsonreutersglis2e--uat.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.setAttribute('src', 'https://thomsonreutersglis2e--cxddev.my.salesforce.com/embeddedservice/5.0/esw.min.js');
 		s.onload = function() {
 			initESW(null);
 		};
